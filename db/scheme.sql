@@ -1,8 +1,8 @@
 -- Checks for existing database if its exist ,deletes the database
 DROP DATABASE IF EXISTS employeTracker_db
 -- Create a new database
-CREATE DATABASE employeTracker_db;
-\c employeTracker_db
+CREATE DATABASE employeeTracker_db;
+\c employeeTracker_db
 
 -- Create a new table department
 CREATE TABLE department (

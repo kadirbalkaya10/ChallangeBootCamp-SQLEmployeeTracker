@@ -1,6 +1,8 @@
 -- SEED DATA
 
+DO $$
 
+BEGIN
 -- Inserting data into department
 INSERT INTO department (name) 
     VALUES
@@ -10,17 +12,26 @@ INSERT INTO department (name)
     ('Human Resources');
 
 -- Inserting data into role
-INSERT INTO role (title,salary,department)
+INSERT INTO role (title,salary,department_id)
     VALUES
-    ('Chief Engineer', 175000,1),
-    ('Account Manager' , 80000,2),
-    ('Sales Lead', 120000,3),
-    ('HR Manager', 90000,4);
+    ('Chief Engineer', 175000, 1),
+    ('Account Manager' , 80000, 2),
+    ('Sales Lead', 120000, 3),
+    ('HR Manager', 90000, 4);
 
 -- Inserting data into employee
-    INSERT INTO employee(first_name,last_name,role_id,maneger_id)
+    INSERT INTO employee(first_name,last_name,role_id,manager_id)
     VALUES
-    ('Tony',"Stark",1,NULL),
-    ('Tony',"Montana",1,NULL),
-    ('Jordan',"Belfort",1,NULL),
-    ('Arthur',"Morgan",1,NULL);
+    ('Tony','Stark',1,NULL),
+    ('Tony','Montana',1,NULL),
+    ('Jordan','Belfort',1,NULL),
+    ('Arthur','Morgan',1,NULL);
+
+
+    EXCEPTION WHEN OTHERS THEN -- Handle any unexpected errors
+    ROLLBACK;
+    RAISE EXCEPTION '%', SQLERRM ;
+
+     
+
+END$$;

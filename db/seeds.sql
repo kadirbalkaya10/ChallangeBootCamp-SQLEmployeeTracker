@@ -23,9 +23,9 @@ INSERT INTO role (title,salary,department_id)
     INSERT INTO employee(first_name,last_name,role_id,manager_id)
     VALUES
     ('Tony','Stark',1,NULL),
-    ('Tony','Montana',1,NULL),
-    ('Jordan','Belfort',1,NULL),
-    ('Arthur','Morgan',1,NULL);
+    ('Tony','Montana',2,NULL),
+    ('Jordan','Belfort',3,NULL),
+    ('Arthur','Morgan',4,NULL);
 
 
     EXCEPTION WHEN OTHERS THEN -- Handle any unexpected errors

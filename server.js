@@ -1,10 +1,8 @@
 //DEPENDENCIES
 const express = require("express");
-
-// Import and require Pool (node-postgres)
-// We'll be creating a Connection Pool
-const { Pool } = require("pg");
 const fs = require("fs");
+// We'll be creating a Connection Pool
+const db = require("./lib/db");
 
 // PORT \ APP
 
@@ -14,19 +12,6 @@ const app = express();
 // Express middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
-// Connect to database
-const pool = new Pool(
-  {
-    user: "postgres",
-    password: "password123",
-    host: "localhost",
-    database: "employeeTracker_db",
-  },
-  console.log(`Connected to the employeeTracker_db database.`)
-);
-
-pool.connect();
 
 //ROUTES
 //Api Routes

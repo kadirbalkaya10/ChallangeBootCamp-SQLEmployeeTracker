@@ -15,7 +15,7 @@
   "dependencies": {
     "express": "^4.19.2",
     "fs": "^0.0.1-security",
-    "inquirer": "^8.2.4",
+    "inquirer": "^8.2.6",
     "pg": "^8.11.5"
   }
 }

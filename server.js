@@ -1,6 +1,6 @@
 //DEPENDENCIES
 const express = require("express");
-const fs = require("fs");
+const renderApp = require("./lib/inquirerQuestions");
 // We'll be creating a Connection Pool
 const db = require("./lib/db");
 
@@ -15,7 +15,7 @@ app.use(express.json());
 
 //ROUTES
 //Api Routes
-
+renderApp();
 //START APP
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
